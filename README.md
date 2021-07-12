@@ -1,7 +1,7 @@
 
 This repository is to document some quarks of working with prisma that may have been unexpected when coming from a traditional ORM. Prisma does some [magic](https://media.tenor.com/images/1fb93e098589d31f5023b7d32418f013/tenor.gif) when you actually make a query. [It leverages `process.nextTick` to optimize all the queries issued in one JS "tick"](https://www.prisma.io/docs/guides/performance-and-optimization/query-optimization-performance). (I didn't know that was even a thing until recently)
 
-**Why this is important:** Most observability tools and expception monitors make assumptions about how to propogate tracing so that you can tie an exception or database query back to the code which produced it.
+**Why this is important:** Most observability tools and expception monitors make assumptions about how to propogate tracing so that you can tie an exception or database query back to the code which produced it--they expect that the database query or exception will be on the same call stack as the code which caused the query to run or throw.
 
 ---
 
